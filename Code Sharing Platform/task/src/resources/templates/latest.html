@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Latest</title>
+    <link rel="stylesheet"
+          href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/styles/default.min.css">
+    <script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.2.1/build/highlight.min.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+<ul>
+    <li th:each="el : ${codes}">
+        <span id="load_date" class="time" th:text="${el.date}"></span>
+        <br>
+        <pre id="code_snippet" class="code">
+            <code>
+                <p th:text="${el.code}"></p>
+            </code>
+        </pre>
+    </li>
+</ul>
+
+</body>
+</html>
